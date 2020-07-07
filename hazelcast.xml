@@ -1,0 +1,17 @@
+<hazelcast xmlns="http://www.hazelcast.com/schema/config" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.hazelcast.com/schema/config http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
+
+<cluster-name>${cluster.name}</cluster-name>
+<network>
+		<rest-api enabled="${rest-api.enabled}">
+			<endpoint-group name="CLUSTER_READ" enabled="true"/>
+	        <endpoint-group name="CLUSTER_WRITE" enabled="false"/>
+			<endpoint-group name="HEALTH_CHECK" enabled="true"/>
+			<endpoint-group name="HOT_RESTART" enabled="false"/>
+			<endpoint-group name="WAN" enabled="false"/>
+			<endpoint-group name="DATA" enabled="true"/>
+			<endpoint-group name="CP" enabled="false"/>
+		</rest-api>
+	</network>
+</hazelcast>
